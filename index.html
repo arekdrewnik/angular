@@ -1,0 +1,292 @@
+﻿
+<!DOCTYPE html>
+<html lang="pl" ng-app="app">
+    <head>
+        <base href="/"></base>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- <link rel="shortcut icon" href="img/favicon_1.ico"> -->
+
+        <title>AngularJs - przykład użycia  </title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-reset.css" rel="stylesheet">
+        <!--<link href="css/bootstrap-select.css" rel="stylesheet">-->
+
+        <!--Animation css-->
+        <link href="css/animate.css" rel="stylesheet">
+
+        <!--Icon-fonts css-->
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <link href="assets/ionicon/css/ionicons.min.css" rel="stylesheet" />
+
+        <!--Morris Chart CSS -->
+        <link rel="stylesheet" href="assets/morris/morris.css">
+
+        <link href="assets/calendar/fullcalendar.css" rel="stylesheet" />
+
+        <!-- sweet alerts -->
+        <link href="assets/sweet-alert/sweet-alert.min.css" rel="stylesheet">
+
+        <link href="assets/responsive-table/responsive-table.css" rel="stylesheet">
+
+        <!-- DataTables -->
+        <link href="assets/tables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/helper.css" rel="stylesheet">
+     
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+        <!--[if lt IE 9]>
+          <script src="js/html5shiv.js"></script>
+          <script src="js/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+
+    <body>
+
+        <!-- Aside Start-->
+        <aside class="left-panel">
+
+            <!-- brand -->
+            <div class="logo">
+                <a ui-sref="/" class="logo-expanded">
+                    <i class="ion-social-buffer"></i>
+                    <span class="nav-label">App</span>
+                </a>
+            </div>
+            <!-- / brand -->
+        
+            <!-- Navbar Start -->
+            <nav class="navigation">
+                <ul class="list-unstyled">
+                    <li class="active"><a ui-sref="/"><i class="ion-home"></i> <span class="nav-label">Dashboard</span></a></li>
+                    <li><a ui-sref="/roomer"><i class="ion-person-stalker"></i> <span class="nav-label">Lokatorzy</span></a></li>
+                    <li><a ui-sref="/bills"><i class="ion-social-usd"></i> <span class="nav-label">Czynsz</span></a></li>
+                    <li><a ui-sref="/mail"><i class="ion-email"></i> <span class="nav-label">Poczta</span></a></li>
+                    <li><a ui-sref="/calendar"><i class="ion-calendar"></i> <span class="nav-label">Kalendarz</span></a></li>
+                    <li><a ui-sref="/timeline"><i class="ion-shuffle"></i> <span class="nav-label">Linia czasu (zmian)</span></a></li>
+                    <li><a ui-sref="/tasks"><i class="ion-android-done-all"></i> <span class="nav-label">Zadania</span></a></li>
+                </ul>
+            </nav>
+                
+        </aside>
+        <!-- Aside Ends-->
+
+
+        <!--Main Content Start -->
+        <section class="content">
+            
+            <!-- Header -->
+            <header class="top-head container-fluid">
+                <button type="button" class="navbar-toggle pull-left">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                
+                <!-- Search -->
+                <form role="search" class="navbar-left app-search pull-left hidden-xs">
+                  <input type="text" placeholder="Search..." class="form-control">
+                  <a href=""><i class="fa fa-search"></i></a>
+                </form>
+                
+                <ul class="list-inline navbar-right top-menu top-right-menu">  
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">
+                            <i class="fa fa-envelope-o "></i>
+                            <span class="badge badge-sm up bg-purple count">4</span>
+                        </a>
+                        <ul class="dropdown-menu extended fadeInUp animated nicescroll" tabindex="5001">
+                            <li>
+                                <p>Messages</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><img src="img/avatar-2.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="block"><strong>John smith</strong></span>
+                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 seconds ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><img src="img/avatar-3.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="block"><strong>John smith</strong></span>
+                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">3 minutes ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><img src="img/avatar-4.jpg" class="img-circle thumb-sm m-r-15" alt="img"></span>
+                                    <span class="block"><strong>John smith</strong></span>
+                                    <span class="media-body block">New tasks needs to be done<br><small class="text-muted">10 minutes ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <p><a href="inbox.html" class="text-right">See all Messages</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- /messages -->
+                    <!-- Notification -->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge badge-sm up bg-pink count">3</span>
+                        </a>
+                        <ul class="dropdown-menu extended fadeInUp animated nicescroll" tabindex="5002">
+                            <li class="noti-header">
+                                <p>Notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><i class="fa fa-user-plus fa-2x text-info"></i></span>
+                                    <span>New user registered<br><small class="text-muted">5 minutes ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><i class="fa fa-diamond fa-2x text-primary"></i></span>
+                                    <span>Use animate.css<br><small class="text-muted">5 minutes ago</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="pull-left"><i class="fa fa-bell-o fa-2x text-danger"></i></span>
+                                    <span>Send project demo files to client<br><small class="text-muted">1 hour ago</small></span>
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <p><a href="#" class="text-right">See all notifications</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown text-center">
+                        <a data-toggle="dropdown" class="dropdown-toggle">
+                            <img alt="" src="img/avatar-2.jpg" class="img-circle profile-img thumb-sm">
+                            <span class="username">{{user.user_name}} {{user.user_surname}} </span> <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu extended pro-menu fadeInUp animated" tabindex="5003" style="overflow: hidden; outline: none;">
+                            <li><a ui-sref="/user"><i class="fa fa-briefcase"></i>Profile</a></li>
+                            <li><a ui-sref="/settings"><i class="fa fa-cog"></i>Ustawienia</a></li>
+                            <!-- <li><a href="#"><i class="fa fa-bell"></i> Friends <span class="label label-info pull-right mail-info">5</span></a></li> -->
+                            <li><a ui-sref="/logout"><i class="fa fa-sign-out"></i>Wyloguj</a></li>
+                        </ul>
+                    </li>     
+                </ul>
+
+            </header>
+
+            <div id="pageContent" style="position:relative;">
+                <div ui-view></div>
+            </div>
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                App
+            </footer>
+            <!-- Footer Ends -->
+
+        </section>
+        <!-- Main Content Ends -->
+        
+
+
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js"></script>
+        <script src="js/jquery-ui-1.10.1.custom.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!--<script src="js/bootstrap-select.js"></script>-->
+        <script src="js/modernizr.min.js"></script>
+        <script src="js/pace.min.js"></script>
+        <script src="js/wow.min.js"></script>
+        <script src="js/jquery.scrollTo.min.js"></script>
+        <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+        <script src="assets/chat/moment-2.2.1.js"></script>
+
+        <!-- Counter-up -->
+        <script src="js/waypoints.min.js" type="text/javascript"></script>
+        <script src="js/jquery.counterup.min.js" type="text/javascript"></script>
+
+
+        <!-- sweet alerts -->
+        <script src="assets/sweet-alert/sweet-alert.min.js"></script>
+        <script src="assets/sweet-alert/sweet-alert.init.js"></script>
+
+        
+
+        <script src="assets/responsive-table/responsive-table.js"></script>
+
+        <script src="assets/calendar/moment.min.js"></script>
+        <script src="assets/calendar/fullcalendar.min.js"></script>
+        <script src="assets/calendar/lang-all.js"></script>
+        <!--dragging calendar event-->
+        <script src="assets/calendar/calendar-init.js"></script>
+
+        <script src="assets/tables/jquery.dataTables.min.js"></script>
+        <script src="assets/tables/dataTables.bootstrap.js"></script>
+
+
+
+
+
+        <script src="js/jquery.app.js"></script>
+        <!-- Chat -->
+        <script src="js/jquery.chat.js"></script>
+        <!-- Dashboard -->
+        <script src="js/jquery.dashboard.js"></script>
+        <!-- Todo -->
+        <script src="js/jquery.todo.js"></script>
+
+        <script type="text/javascript">
+        /* ==============================================
+             Counter Up
+             =============================================== */
+             moment.locale('pl');
+
+            jQuery(document).ready(function($) {
+                $('.counter').counterUp({
+                    delay: 100,
+                    time: 1200
+                });
+
+
+                $('.list-unstyled li').on('click', function(){
+
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                })
+            });
+        </script>
+
+
+
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <!--// <script type="text/javascript" src="js/angular-route.min.js"></script>-->
+        <script type="text/javascript" src="js/angular-ui-router.js"></script>
+        <script type="text/javascript" src="js/jcs-auto-validate.min.js"></script>
+        <script type="text/javascript" src="js/ui-bootstrap-tpls-0.14.3.min.js"></script>
+
+
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="app/factory.js"></script>
+        <script type="text/javascript" src="app/directives.js"></script>
+        <script type="text/javascript" src="app/filter.js"></script>
+        <script type="text/javascript" src="app/bills/bills.js"></script>
+        <script type="text/javascript" src="app/www/pages.js"></script>
+
+    
+
+    </body>
+</html>
